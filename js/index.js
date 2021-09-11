@@ -1,66 +1,24 @@
+import showMenu from './show_menu'
+import removeMenuMobile from './remove_menu_mobile'
+import showScrollUp from './show_scroll-up'
+import changeHeaderBackground from './change_header_background'
+import scrollSectionActiveLink from './scroll_section_active-link'
 import '../css/style.css'
 
 
 window.addEventListener('DOMContentLoaded', () => {
   /* SHOW MENU */
-  const navMenu = document.getElementById('nav-menu'),
-        navToggle = document.getElementById('nav-toggle'),
-        navClose = document.getElementById('nav-close')
-  if (navToggle) {
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.add('show-menu')
-    })
-  }
-  if (navClose) {
-    navClose.addEventListener('click', () => {
-      navMenu.classList.remove('show-menu')
-    })
-  }
+  showMenu()
 
   /* REMOVE MENU MOBILE */
-  const navLinks = document.querySelectorAll('.nav__link')
-  function linkAction () {
-    navMenu.classList.remove('show-menu')
-  }
-  navLinks.forEach(link => link.addEventListener('click', linkAction))
-
-  /* CHANGE BACKGROUND HEADER */
-  function scrollHeader () {
-    const header = document.getElementById('header')
-    if(this.scrollY >= 50) {
-      header.classList.add('scroll-header')
-    } else {
-      header.classList.remove('scroll-header')
-    }
-  }
-  window.addEventListener('scroll', scrollHeader)
-
+  removeMenuMobile()
 
   /* SHOW SCROLL UP */
-  function scrollUp () {
-    const scrollUp = document.getElementById('scroll-up')
-    if (this.scrollY >= 200) {
-      scrollUp.classList.add('show-scroll')
-    } else {
-      scrollUp.classList.remove('show-scroll')
-    }
-  }
-  window.addEventListener('scroll', scrollUp)
+  showScrollUp()
+
+  /* CHANGE HEADER BACKGROUND  */
+  changeHeaderBackground()
 
   /* SCROLL SECTION ACTIVE LINK */
-  const sections = document.querySelectorAll('section[id]')
-  function scrollActive () {
-    const scrollY = window.scrollY
-    sections.forEach(current => {
-      const sectionTop = current.offsetTop - 50
-      const sectionHeight = current.offsetHeight
-      const sectionId = current.getAttribute('id')
-      if (scrollY > sectionTop && scrollY <= (sectionTop + sectionHeight)) {
-        document.querySelector(`.nav__menu a[href*=${sectionId}]`).classList.add('active-link')
-      } else {
-        document.querySelector(`.nav__menu a[href*=${sectionId}]`).classList.remove('active-link')
-      }
-    })
-  }
-  window.addEventListener('scroll', scrollActive)
+  scrollSectionActiveLink()
 })
