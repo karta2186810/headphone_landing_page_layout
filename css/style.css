@@ -110,6 +110,7 @@ img {
 .section__title-gradient {
   background: var(--text-gradient);
   color: transparent;
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
@@ -207,6 +208,11 @@ img {
   top: 0;
 }
 
+/* change background header*/
+.scroll-header {
+  background-color: var(--body-color);
+}
+
 /*===================== HOME ======================*/
 .home__img {
   width: 250px;
@@ -279,4 +285,16 @@ img {
   display: inline-flex;
   align-items: center;
   column-gap: .75rem;
+}
+
+/*===================== SPONSOR ======================*/
+.sponsor__img {
+  width: 90px;
+}
+
+.sponsor__container {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  row-gap: 5rem;
+  justify-items: center;
+  align-items: center;
 }
