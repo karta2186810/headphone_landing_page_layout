@@ -1,4 +1,3 @@
-const path = require('path')
 const { merge } = require('webpack-merge')
 const commonConfig = require('./webpack.common')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -14,13 +13,18 @@ module.exports = merge(commonConfig, {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: ['babel-loader']
+      },
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css'
+      filename: 'css/[name].[contenthash:8].css'
     }),
     new OptimizeCssAssetsWebpackPlugin()
   ]

@@ -1,8 +1,9 @@
-import showMenu from './show_menu'
-import removeMenuMobile from './remove_menu_mobile'
-import showScrollUp from './show_scroll-up'
-import changeHeaderBackground from './change_header_background'
-import scrollSectionActiveLink from './scroll_section_active-link'
+import showMenu from './showMenu'
+import removeMenuMobile from './removeMenuMobile'
+import showScrollUp from './showScrollup'
+import changeHeaderBackground from './changeHeaderBackground'
+import scrollSectionActiveLink from './scrollSectionActiveLink'
+import scrollRevealAnimation from "./scrollRevealAnimation";
 import '../css/style.css'
 
 
@@ -21,4 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   /* SCROLL SECTION ACTIVE LINK */
   scrollSectionActiveLink()
+
+  /* SCROLL REVEAL ANIMATION */
+  scrollRevealAnimation()
 })
