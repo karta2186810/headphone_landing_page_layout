@@ -16,3 +16,6 @@
 * Webpack
 * JS兼容性處理: Babel
 * CSS前綴處理: PostCss
+
+### 設計稿及素材圖片來源
+https://www.youtube.com/channel/UCgkDs77BoEhMIgRUB4MKrtQ
