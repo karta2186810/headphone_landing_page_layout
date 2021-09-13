@@ -1,6 +1,8 @@
 # Headphone RWD Landing Page Layout
 ### 介紹
-Beats 耳機 RWD Landing Page 切版實作
+耳機 Landing Page 切版練習作品，
+用以學習 CSS Variables 的使用、CSS BEM 設計模式、 Grid 排版的使用，以及 Mobile First RWD 網頁設計。
+
 ### 使用語言
 * HTML
 * CSS
@@ -14,9 +16,3 @@ Beats 耳機 RWD Landing Page 切版實作
 * Webpack
 * JS兼容性處理: Babel
 * CSS前綴處理: PostCss
-
-### 學習成果
-* CSS3 Variables 的使用
-* CSS BEM 設計模式
-* Grid 排版的使用
-* Mobile First RWD 網頁設計
